@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Restaurante</title>
     <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
 
     <main class="contenedor-principal">
@@ -20,10 +22,10 @@
                     </div>
                 </div>
 
-                <div class="estado-badge activo">
+                <button id="btn-cerrar-jornada" class="estado-badge activo">
                     <span class="estado-punto"></span>
-                    Sistema activo
-                </div>
+                    Cerrar jornada
+                </button>
             </div>
         </header>
 
@@ -86,6 +88,7 @@
                             <th>Precio</th>
                             <th>Stock</th>
                             <th>Estado</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody id="tabla-productos"></tbody>
@@ -104,6 +107,7 @@
                             <th>Cantidad</th>
                             <th>Estado</th>
                             <th>Total</th>
+                            <th>Accion</th>
                         </tr>
                     </thead>
                     <tbody id="tabla-pedidos"></tbody>
@@ -116,4 +120,5 @@
 
     <script src="./js/app.js"></script>
 </body>
+
 </html>

@@ -52,3 +52,13 @@ class Factura(Base):
     fecha_emision = Column(DateTime, default=datetime.utcnow)
 
     pedido = relationship("Pedido", back_populates="factura")
+
+class Jornada(Base):
+    __tablename__ = "jornadas"
+
+    id = Column(Integer, primary_key=True, index=True)
+    fecha_apertura = Column(DateTime, default=datetime.utcnow)
+    fecha_cierre = Column(DateTime, nullable=True)
+    total_pedidos = Column(Integer, default=0)
+    total_facturado = Column(Float, default=0)
+    estado = Column(String(50), default="Abierta")

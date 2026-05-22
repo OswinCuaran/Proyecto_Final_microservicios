@@ -212,3 +212,35 @@ td {
         align-items: flex-start;
     }
 }
+
+table {
+    min-width: 100%;
+}
+
+.tabla-panel {
+    overflow-x: auto;
+}
+
+button {
+    min-width: 120px;
+}
+
+.tabla-panel {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 900px;
+}
+
+td:last-child,
+th:last-child {
+    min-width: 160px;
+    text-align: center;
+}
+
+td button {
+    min-width: 100px;
+    padding: 8px 12px;
+}

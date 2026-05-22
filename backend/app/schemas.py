@@ -28,10 +28,10 @@ class DetallePedidoCreate(BaseModel):
 
 class DetallePedidoResponse(BaseModel):
     id: int
-    producto_id: int
+    producto_id: Optional[int] = None
     cantidad: int
     subtotal: float
-    producto: ProductoResponse
+    producto: Optional[ProductoResponse] = None
 
     class Config:
         from_attributes = True
@@ -65,6 +65,17 @@ class FacturaResponse(BaseModel):
     total: float
     metodo_pago: str
     fecha_emision: datetime
+
+    class Config:
+        from_attributes = True
+
+class JornadaResponse(BaseModel):
+    id: int
+    fecha_apertura: datetime
+    fecha_cierre: Optional[datetime]
+    total_pedidos: int
+    total_facturado: float
+    estado: str
 
     class Config:
         from_attributes = True
