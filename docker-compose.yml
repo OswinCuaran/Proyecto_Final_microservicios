@@ -1,0 +1,50 @@
+services:
+
+  backend:
+    build: ./backend
+    container_name: fastapi_backend
+    ports:
+      - "8001:8000"
+    volumes:
+      - ./backend/app:/app
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:16
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: microservicios_db
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  frontend:
+    build: ./frontend
+    container_name: frontend_app
+    ports:
+      - "80:80"
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx_proxy
+    ports:
+      - "8081:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - backend
+      - frontend
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana_monitor
+    ports:
+      - "3001:3000"
+
+volumes:
+  postgres_data:
