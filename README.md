@@ -34,6 +34,34 @@ El sistema está compuesto por los siguientes servicios:
 - Monitoreo: Grafana conectado a PostgreSQL.
  - Monitoreo: Grafana conectado a PostgreSQL.
 
+## Estructura del proyecto
+
+    Proyecto_Final_microservicios
+    │
+    ├── backend
+    │   ├── main.py
+    │   ├── routes.py
+    │   ├── models.py
+    │   ├── schemas.py
+    │   ├── database.py
+    │   └── requirements.txt
+    │
+    ├── frontend
+    │   ├── index.html
+    │   ├── css
+    │   │   └── styles.css
+    │   └── js
+    │       └── app.js
+    │
+    ├── nginx
+    │   └── nginx.conf
+    │
+    ├── docker-compose.yml
+    │
+    ├── README.md
+    │
+    └── .env
+
 ## Funcionalidades principales
 
 - Registro de productos.
