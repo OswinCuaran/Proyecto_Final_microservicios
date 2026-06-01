@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema Restaurante</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -48,8 +48,28 @@
                 </div>
             </div>
 
-            <div class="panel-grid">
+            <section class="panel filtros-panel">
+                <h2>Filtros y búsqueda</h2>
 
+                <div class="filtros-grid">
+                    <input type="text" id="buscar-producto" placeholder="Buscar producto por nombre">
+
+                    <select id="filtro-productos">
+                        <option value="todos">Todos los productos</option>
+                        <option value="disponibles">Disponibles</option>
+                        <option value="stock-bajo">Stock bajo</option>
+                        <option value="agotados">Agotados</option>
+                    </select>
+
+                    <select id="filtro-pedidos">
+                        <option value="todos">Todos los pedidos</option>
+                        <option value="pendientes">Pendientes</option>
+                        <option value="pagados">Pagados</option>
+                    </select>
+                </div>
+            </section>
+
+            <div class="panel-grid">
                 <section class="panel">
                     <h2>Registrar producto</h2>
 
@@ -58,7 +78,6 @@
                         <input type="text" id="descripcion" placeholder="Descripción">
                         <input type="number" id="precio" placeholder="Precio" required>
                         <input type="number" id="stock" placeholder="Stock" required>
-
                         <button type="submit">Guardar producto</button>
                     </form>
                 </section>
@@ -70,11 +89,9 @@
                         <input type="number" id="mesa" placeholder="Número de mesa" required>
                         <input type="number" id="producto-id" placeholder="ID producto" required>
                         <input type="number" id="cantidad" placeholder="Cantidad" required>
-
                         <button type="submit">Crear pedido</button>
                     </form>
                 </section>
-
             </div>
 
             <section class="panel tabla-panel">
@@ -107,10 +124,27 @@
                             <th>Cantidad</th>
                             <th>Estado</th>
                             <th>Total</th>
-                            <th>Accion</th>
+                            <th>Acción</th>
                         </tr>
                     </thead>
                     <tbody id="tabla-pedidos"></tbody>
+                </table>
+            </section>
+
+            <section class="panel tabla-panel">
+                <h2>Facturas generadas</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID Factura</th>
+                            <th>Pedido</th>
+                            <th>Total</th>
+                            <th>Método de pago</th>
+                            <th>Fecha</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabla-facturas"></tbody>
                 </table>
             </section>
 
@@ -118,7 +152,7 @@
 
     </main>
 
-    <script src="./js/app.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>

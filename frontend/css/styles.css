@@ -36,7 +36,6 @@ body {
 
 .contenedor-principal {
     width: 100%;
-    max-width: none;
     min-height: 100vh;
 }
 
@@ -130,6 +129,55 @@ body {
     font-family: 'Share Tech Mono', monospace;
 }
 
+.filtros-panel {
+    margin-bottom: 24px;
+}
+
+.filtros-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 16px;
+    align-items: center;
+}
+
+.filtros-grid input,
+.filtros-grid select {
+    width: 100%;
+    height: 48px;
+    background: var(--negro-medio);
+    border: 1px solid var(--borde);
+    color: var(--blanco);
+    padding: 12px;
+    border-radius: 8px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1rem;
+}
+
+.filtros-grid select {
+    cursor: pointer;
+    /* Quitar flecha nativa del navegador */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /* Flecha personalizada en color azul neón */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2300f0ff' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 38px;
+}
+
+.filtros-grid select option {
+    background: var(--negro-medio);
+    color: var(--blanco);
+}
+
+.filtros-grid input:focus,
+.filtros-grid select:focus {
+    outline: none;
+    border-color: var(--azul-neon);
+    box-shadow: var(--sombra-neon);
+}
+
 .panel-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -143,7 +191,7 @@ form {
     gap: 12px;
 }
 
-input {
+form input {
     background: var(--negro-medio);
     border: 1px solid var(--borde);
     color: var(--blanco);
@@ -153,7 +201,7 @@ input {
     font-size: 1rem;
 }
 
-input:focus {
+form input:focus {
     outline: none;
     border-color: var(--azul-neon);
     box-shadow: var(--sombra-neon);
@@ -170,6 +218,7 @@ button {
     font-weight: 700;
     font-size: 1rem;
     text-transform: uppercase;
+    min-width: 120px;
 }
 
 button:hover {
@@ -179,10 +228,12 @@ button:hover {
 
 .tabla-panel {
     margin-bottom: 24px;
+    overflow-x: auto;
 }
 
 table {
     width: 100%;
+    min-width: 900px;
     border-collapse: collapse;
     margin-top: 12px;
 }
@@ -203,37 +254,6 @@ td {
     color: var(--blanco);
 }
 
-@media (max-width: 800px) {
-    .header-contenido,
-    .tarjetas-resumen,
-    .panel-grid {
-        grid-template-columns: 1fr;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-
-table {
-    min-width: 100%;
-}
-
-.tabla-panel {
-    overflow-x: auto;
-}
-
-button {
-    min-width: 120px;
-}
-
-.tabla-panel {
-    overflow-x: auto;
-}
-
-table {
-    width: 100%;
-    min-width: 900px;
-}
-
 td:last-child,
 th:last-child {
     min-width: 160px;
@@ -243,4 +263,44 @@ th:last-child {
 td button {
     min-width: 100px;
     padding: 8px 12px;
+    margin: 3px;
+}
+
+.badge {
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.badge-verde {
+    background: #00ff88;
+    color: #0b1020;
+}
+
+.badge-rojo {
+    background: #ff4d4d;
+    color: white;
+}
+
+.badge-amarillo {
+    background: #ffd54a;
+    color: #0b1020;
+}
+
+.badge-gris {
+    background: #777;
+    color: white;
+}
+
+@media (max-width: 800px) {
+    .header-contenido,
+    .tarjetas-resumen,
+    .panel-grid,
+    .filtros-grid {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }
