@@ -3,7 +3,7 @@ from sqlalchemy.orm import relationship
 from datetime import datetime
 from database import Base
 
-
+# Modelos de la base de datos para el sistema 
 class Producto(Base):
     __tablename__ = "productos"
 

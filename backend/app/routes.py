@@ -9,7 +9,7 @@ from schemas import ProductoCreate, ProductoResponse, PedidoCreate, PedidoRespon
 
 router = APIRouter()
 
-
+# Rutas para productos, pedidos, facturas y jornadas
 @router.post("/productos", response_model=ProductoResponse)
 def crear_producto(producto: ProductoCreate, db: Session = Depends(get_db)):
 

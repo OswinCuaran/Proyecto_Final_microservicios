@@ -2,7 +2,7 @@ from pydantic import BaseModel
 from typing import Optional, List
 from datetime import datetime
 
-
+# Esquemas de Pydantic para validación de datos y serialización de respuestas
 class ProductoBase(BaseModel):
     nombre: str
     descripcion: Optional[str] = None
