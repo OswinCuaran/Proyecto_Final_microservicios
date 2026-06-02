@@ -9,7 +9,7 @@ class ProductoBase(BaseModel):
     precio: float
     stock: int
 
-
+# Funcion que hereda de ProductoBase para crear un nuevo producto
 class ProductoCreate(ProductoBase):
     pass
 
